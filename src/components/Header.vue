@@ -11,7 +11,7 @@
           <router-link to="/">Início</router-link>
         </li>
         <li>
-          <router-link to="/">Empresa</router-link>
+          <router-link to="/empresa">Empresa</router-link>
         </li>
         <li>
           <router-link to="/">Projetos</router-link>
