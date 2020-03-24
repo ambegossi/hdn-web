@@ -35,7 +35,8 @@ p {
   margin: 0px;
 }
 
-ul {
+ul,
+li {
   list-style: none;
 }
 
