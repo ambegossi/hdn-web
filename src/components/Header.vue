@@ -14,7 +14,7 @@
           <router-link to="/empresa">Empresa</router-link>
         </li>
         <li>
-          <router-link to="/">Projetos</router-link>
+          <router-link to="/projetos">Projetos</router-link>
         </li>
         <li>
           <router-link to="/">Contato</router-link>
@@ -68,7 +68,8 @@ ul li:first-child {
   margin-left: 0px;
 }
 
-ul li a:hover {
-  color: white;
+ul li a:hover,
+ul li a.router-link-exact-active {
+  color: #fff;
 }
 </style>
