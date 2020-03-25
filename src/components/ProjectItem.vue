@@ -49,6 +49,11 @@ export default {
   grid-gap: 20px;
   position: relative;
   margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.project:hover {
+  background: #cbcbcb;
 }
 
 .project-img {

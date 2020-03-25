@@ -2,24 +2,26 @@
   <section class="projects container">
     <div class="our-projects">
       <h1 class="title">Nossos Projetos</h1>
-      <li v-for="(project, index) in projects" :key="index">
-        <ProjectItem :project="project" />
+      <li v-for="project in projects" :key="project.imdbID">
+        <section :id="project.imdbID">
+          <ProjectItem :project="project" />
+        </section>
       </li>
     </div>
-    <div class="list-projects">
-      <ProjectsList :projects="projects" />
-    </div>
+    <ProjectsList :projects="projects" />
   </section>
 </template>
 
 <script>
 import ProjectItem from '../components/ProjectItem.vue';
+import ProjectsList from '../components/ProjectsList.vue';
 import api from '../services/api';
 
 export default {
   name: 'Projects',
   components: {
     ProjectItem,
+    ProjectsList,
   },
   data() {
     return {
@@ -40,7 +42,7 @@ export default {
 </script>
 
 <style scoped>
-.our-projects {
+.projects {
   padding: 40px 0;
 }
 
