@@ -48,5 +48,6 @@ export default {
 
 .title {
   margin-bottom: 67px;
+  font-size: 28px;
 }
 </style>

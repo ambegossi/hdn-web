@@ -61,4 +61,20 @@ img {
   max-width: 960px;
   margin: 0 auto;
 }
+
+.btn {
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  height: 40px;
+}
+
+.btn-form {
+  background: none;
+  border: 1px solid #707070;
+  font-weight: bold;
+  color: #aeaeae;
+}
 </style>

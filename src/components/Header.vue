@@ -17,10 +17,10 @@
           <router-link to="/projetos">Projetos</router-link>
         </li>
         <li>
-          <router-link to="/">Contato</router-link>
+          <router-link to="/contato">Contato</router-link>
         </li>
         <li>
-          <router-link to="/">Trabalhe Conosco</router-link>
+          <router-link to="/trabalhe-conosco">Trabalhe Conosco</router-link>
         </li>
       </ul>
     </nav>
