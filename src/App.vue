@@ -70,4 +70,11 @@ img {
   border: none;
   height: 40px;
 }
+
+input {
+  border-radius: 4px;
+  border: 1px solid #707070;
+  height: 40px;
+  width: 100%;
+}
 </style>

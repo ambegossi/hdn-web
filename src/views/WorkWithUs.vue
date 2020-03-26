@@ -19,7 +19,9 @@
         <input id="select-file" type="file" />
       </template>
     </Form>
-    <button class="employee-btn">Já sou funcionario</button>
+    <router-link class="employee-btn" to="/login"
+      >Já sou funcionario</router-link
+    >
   </section>
 </template>
 
@@ -53,6 +55,7 @@ export default {
   font-size: 16px;
   color: #020202;
   opacity: 0.5;
+  text-align: center;
 }
 
 .employee-btn:hover {

@@ -5,6 +5,7 @@ import Company from '../views/Company.vue';
 import Projects from '../views/Projects.vue';
 import Contact from '../views/Contact.vue';
 import WorkWithUs from '../views/WorkWithUs.vue';
+import Login from '../views/Login.vue';
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/trabalhe-conosco',
     name: 'WorkWithUs',
     component: WorkWithUs,
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
   },
 ];
 
