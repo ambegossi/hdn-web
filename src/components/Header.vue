@@ -7,21 +7,28 @@
             <img src="../assets/hdn-logo.png" alt="HDN Digital" />
           </router-link>
         </li>
-        <li>
-          <router-link to="/">Início</router-link>
-        </li>
-        <li>
-          <router-link to="/empresa">Empresa</router-link>
-        </li>
-        <li>
-          <router-link to="/projetos">Projetos</router-link>
-        </li>
-        <li>
-          <router-link to="/contato">Contato</router-link>
-        </li>
-        <li>
-          <router-link to="/trabalhe-conosco">Trabalhe Conosco</router-link>
-        </li>
+        <template v-if="this.$route.name === 'Login'">
+          <li id="li-login">
+            <router-link to="/login">Gestão de Projetos</router-link>
+          </li>
+        </template>
+        <template v-else>
+          <li>
+            <router-link to="/">Início</router-link>
+          </li>
+          <li>
+            <router-link to="/empresa">Empresa</router-link>
+          </li>
+          <li>
+            <router-link to="/projetos">Projetos</router-link>
+          </li>
+          <li>
+            <router-link to="/contato">Contato</router-link>
+          </li>
+          <li>
+            <router-link to="/trabalhe-conosco">Trabalhe Conosco</router-link>
+          </li>
+        </template>
       </ul>
     </nav>
   </header>
@@ -54,7 +61,7 @@ ul {
   display: flex;
   flex-direction: row;
   flex: 1;
-  justify-content: space-between;
+  justify-content: left;
 }
 
 ul li {
@@ -71,5 +78,9 @@ ul li:first-child {
 ul li a:hover,
 ul li a.router-link-exact-active {
   color: #fff;
+}
+
+#li-login {
+  text-transform: none;
 }
 </style>
