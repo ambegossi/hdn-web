@@ -19,6 +19,7 @@
         <input id="select-file" type="file" />
       </template>
     </Form>
+    <button class="employee-btn">Já sou funcionario</button>
   </section>
 </template>
 
@@ -42,5 +43,19 @@ export default {
 .title {
   margin-bottom: 38px;
   font-size: 28px;
+}
+
+.employee-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  color: #020202;
+  opacity: 0.5;
+}
+
+.employee-btn:hover {
+  color: #3b5ac0;
 }
 </style>
