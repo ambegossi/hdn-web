@@ -20,16 +20,16 @@
       </template>
     </Form>
     <div class="button">
-      <button class="btn btn-send">
+      <button class="btn btn-send" @click.prevent="sendForm">
         Enviar
       </button>
     </div>
-    <h2>{{ contact }}</h2>
   </section>
 </template>
 
 <script>
 import Form from '../components/Form.vue';
+import api from '../services/api';
 
 export default {
   name: 'Contact',
@@ -46,6 +46,11 @@ export default {
       },
       subject: '',
     };
+  },
+  methods: {
+    sendForm() {
+      api.post('/contact', { ...this.contact, subject: this.subject });
+    },
   },
 };
 </script>

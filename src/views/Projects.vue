@@ -15,7 +15,7 @@
 <script>
 import ProjectItem from '../components/ProjectItem.vue';
 import ProjectsList from '../components/ProjectsList.vue';
-import api from '../services/api';
+import getProjects from '../services/apiOmdb';
 
 export default {
   name: 'Projects',
@@ -29,14 +29,14 @@ export default {
     };
   },
   methods: {
-    getProjects() {
-      api.get('/?apikey=c047d840&s=spider%20man').then((response) => {
+    populateProjects() {
+      getProjects('/?apikey=c047d840&s=spider%20man').then((response) => {
         this.projects = response.data.Search;
       });
     },
   },
   created() {
-    this.getProjects();
+    this.populateProjects();
   },
 };
 </script>

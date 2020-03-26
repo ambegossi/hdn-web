@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import api from '../services/api';
+import getProjects from '../services/apiOmdb';
 
 export default {
   name: 'ProjectItem',
@@ -31,7 +31,7 @@ export default {
   methods: {
     getDetailedProject() {
       const title = this.project.Title.replace(/\s/g, '+');
-      api.get(`?apikey=c047d840&t=${title}&plot=short`).then((response) => {
+      getProjects(`?apikey=c047d840&t=${title}&plot=short`).then((response) => {
         this.detailed_project = response.data;
       });
     },
