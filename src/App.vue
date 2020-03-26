@@ -70,11 +70,4 @@ img {
   border: none;
   height: 40px;
 }
-
-.btn-form {
-  background: none;
-  border: 1px solid #707070;
-  font-weight: bold;
-  color: #aeaeae;
-}
 </style>

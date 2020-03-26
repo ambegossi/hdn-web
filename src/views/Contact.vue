@@ -2,7 +2,8 @@
   <section class="contact container">
     <h1 class="title">Fale Conosco</h1>
     <Form>
-      <button class="btn btn-form">Anexar arquivo</button>
+      <label class="label-file" for="select-file">Anexar arquivo</label>
+      <input id="select-file" type="file" />
     </Form>
   </section>
 </template>
@@ -27,10 +28,5 @@ export default {
 .title {
   margin-bottom: 38px;
   font-size: 28px;
-}
-
-.btn-form {
-  height: 40px;
-  width: 400px;
 }
 </style>

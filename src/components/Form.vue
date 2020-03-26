@@ -3,11 +3,12 @@
     <div class="id">
       <div class="name">
         <label for="name">Nome</label>
-        <input id="name" name="name" type="text" v-model="name" />
+        <input class="input" id="name" name="name" type="text" v-model="name" />
       </div>
       <div class="last-name">
         <label for="last-name">Sobrenome</label>
         <input
+          class="input"
           id="last-name"
           name="last-name"
           type="text"
@@ -18,11 +19,23 @@
     <div class="id-email">
       <div class="email">
         <label for="email">E-mail</label>
-        <input id="email" name="email" type="email" v-model="email" />
+        <input
+          id="email"
+          class="input"
+          name="email"
+          type="email"
+          v-model="email"
+        />
       </div>
       <div class="subject">
         <label for="subject">Assunto</label>
-        <input id="subject" name="subject" type="text" v-model="subject" />
+        <input
+          id="subject"
+          class="input"
+          name="subject"
+          type="text"
+          v-model="subject"
+        />
       </div>
     </div>
     <div class="description">
@@ -72,7 +85,7 @@ label {
   margin-bottom: 13px;
 }
 
-input {
+.input {
   width: 100%;
   margin-bottom: 23px;
   height: 40px;
@@ -104,7 +117,7 @@ textarea {
   margin: 23px 0;
 }
 
-input,
+.input,
 textarea {
   border-radius: 4px;
   border: 1px solid #707070;
@@ -115,7 +128,8 @@ textarea {
 }
 
 .button {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .btn {
@@ -128,5 +142,28 @@ textarea {
   text-transform: uppercase;
   color: #ffffff;
   font-weight: bold;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.label-file {
+  background: none;
+  border-radius: 4px;
+  border: 1px solid #707070;
+  color: #aeaeae;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  width: 400px;
+  text-align: center;
+  padding: 12px 0;
+  opacity: 1;
+}
+
+.label-file:hover {
+  background: #707070;
+  color: #fff;
 }
 </style>
