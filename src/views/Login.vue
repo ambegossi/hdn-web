@@ -73,23 +73,6 @@ label {
   margin-bottom: 9px;
 }
 
-.button {
-  display: flex;
-  justify-content: center;
-  margin-top: 26px;
-}
-
-.btn {
-  width: 200px;
-}
-
-.btn-send {
-  background: #3b5ac0;
-  text-transform: uppercase;
-  color: #ffffff;
-  font-weight: bold;
-}
-
 .forgot-password-btn {
   border: none;
   background: none;

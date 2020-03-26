@@ -69,6 +69,20 @@ img {
   cursor: pointer;
   border: none;
   height: 40px;
+  width: 200px;
+  margin: 27px 0;
+}
+
+.btn-send {
+  background: #3b5ac0;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }
 
 input {

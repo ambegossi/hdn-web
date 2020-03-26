@@ -1,7 +1,7 @@
 <template>
   <section class="contact container">
     <h1 class="title">Fale Conosco</h1>
-    <Form>
+    <Form @form-inputs="contact = $event">
       <template v-slot:slot-form>
         <div class="subject">
           <label for="subject">Assunto</label>
@@ -19,6 +19,12 @@
         <input id="select-file" type="file" />
       </template>
     </Form>
+    <div class="button">
+      <button class="btn btn-send">
+        Enviar
+      </button>
+    </div>
+    <h2>{{ contact }}</h2>
   </section>
 </template>
 
@@ -29,6 +35,17 @@ export default {
   name: 'Contact',
   components: {
     Form,
+  },
+  data() {
+    return {
+      contact: {
+        name: '',
+        last_name: '',
+        email: '',
+        description: '',
+      },
+      subject: '',
+    };
   },
 };
 </script>

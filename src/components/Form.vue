@@ -3,16 +3,22 @@
     <div class="id">
       <div class="name">
         <label for="name">Nome</label>
-        <input class="input" id="name" name="name" type="text" v-model="name" />
+        <input
+          v-model="inputs.name"
+          class="input"
+          id="name"
+          name="name"
+          type="text"
+        />
       </div>
       <div class="last-name">
         <label for="last-name">Sobrenome</label>
         <input
+          v-model="inputs.last_name"
           class="input"
           id="last-name"
           name="last-name"
           type="text"
-          v-model="last_name"
         />
       </div>
     </div>
@@ -24,7 +30,7 @@
           class="input"
           name="email"
           type="email"
-          v-model="email"
+          v-model="inputs.email"
         />
       </div>
       <slot name="slot-form"></slot>
@@ -34,17 +40,11 @@
       <textarea
         name="description"
         id="description"
-        v-model="description"
+        v-model="inputs.description"
       ></textarea>
     </div>
     <div class="button">
       <slot name="slot-file-input"></slot>
-    </div>
-    <!-- <div v-if="errors.length">
-      <p>*Preencha todos os campos</p>
-    </div> -->
-    <div class="button">
-      <button class="btn btn-send">Enviar</button>
     </div>
   </form>
 </template>
@@ -54,8 +54,23 @@ export default {
   name: 'Form',
   data() {
     return {
-      name: '',
+      inputs: {
+        name: '',
+        last_name: '',
+        email: '',
+        description: '',
+      },
     };
+  },
+  watch: {
+    inputs: {
+      handler() {
+        console.log('olaaaaaa');
+
+        this.$emit('form-inputs', this.inputs);
+      },
+      deep: true,
+    },
   },
 };
 </script>
@@ -122,18 +137,6 @@ textarea {
 .button {
   display: flex;
   justify-content: center;
-}
-
-.btn {
-  margin: 27px 0;
-  width: 200px;
-}
-
-.btn-send {
-  background: #3b5ac0;
-  text-transform: uppercase;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 input[type='file'] {
