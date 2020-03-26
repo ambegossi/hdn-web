@@ -1,21 +1,21 @@
 <template>
-  <section class="contact container">
-    <h1 class="title">Fale Conosco</h1>
+  <section class="work-with-us container">
+    <h1 class="title">Trabalhe Conosco</h1>
     <Form>
       <template v-slot:slot-form>
-        <div class="subject">
-          <label for="subject">Assunto</label>
+        <div class="confirm-email">
+          <label for="confirm-email">Confirmação de e-mail</label>
           <input
-            id="subject"
+            id="confirm-email"
             class="input"
-            name="subject"
+            name="confirm-email"
             type="text"
-            v-model="subject"
+            v-model="confirm_email"
           />
         </div>
       </template>
       <template v-slot:slot-file-input>
-        <label class="label-file" for="select-file">Anexar arquivo</label>
+        <label class="label-file" for="select-file">Anexar currículo</label>
         <input id="select-file" type="file" />
       </template>
     </Form>
@@ -26,7 +26,7 @@
 import Form from '../components/Form.vue';
 
 export default {
-  name: 'Contact',
+  name: 'WorkWithUs',
   components: {
     Form,
   },
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-.contact {
+.work-with-us {
   padding: 40px 0;
   flex-direction: column;
 }

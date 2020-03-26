@@ -27,16 +27,7 @@
           v-model="email"
         />
       </div>
-      <div class="subject">
-        <label for="subject">Assunto</label>
-        <input
-          id="subject"
-          class="input"
-          name="subject"
-          type="text"
-          v-model="subject"
-        />
-      </div>
+      <slot name="slot-form"></slot>
     </div>
     <div class="description">
       <label class="description-label" for="description">Descrição</label>
@@ -47,7 +38,7 @@
       ></textarea>
     </div>
     <div class="button">
-      <slot></slot>
+      <slot name="slot-file-input"></slot>
     </div>
     <!-- <div v-if="errors.length">
       <p>*Preencha todos os campos</p>
@@ -101,7 +92,8 @@ label {
 .name,
 .last-name,
 .email,
-.subject {
+.subject,
+.confirm-email {
   display: inline-block;
   width: 45%;
 }
