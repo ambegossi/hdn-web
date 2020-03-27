@@ -44,7 +44,33 @@
       ></textarea>
     </div>
     <div class="button">
-      <slot name="slot-file-input"></slot>
+      <label
+        v-if="this.$route.name === 'Contact'"
+        v-show="!this.inputs.file"
+        class="label-file"
+        for="select-file"
+        >Anexar arquivo</label
+      >
+      <label
+        v-if="this.$route.name === 'WorkWithUs'"
+        v-show="!this.inputs.file"
+        class="label-file"
+        for="select-file"
+        >Anexar currículo</label
+      >
+      <label
+        v-show="this.inputs.file"
+        class="label-file file-selected"
+        for="select-file"
+        >Arquivo selecionado</label
+      >
+      <input
+        id="select-file"
+        name="select-file"
+        type="file"
+        ref="file"
+        @change="addFile"
+      />
     </div>
   </form>
 </template>
@@ -59,6 +85,7 @@ export default {
         last_name: '',
         email: '',
         description: '',
+        file: null,
       },
     };
   },
@@ -68,6 +95,12 @@ export default {
         this.$emit('form-inputs', this.inputs);
       },
       deep: true,
+    },
+  },
+  methods: {
+    addFile() {
+      const file = this.$refs.file.files[0];
+      this.inputs.file = file;
     },
   },
 };
@@ -157,6 +190,11 @@ input[type='file'] {
 
 .label-file:hover {
   background: #707070;
+  color: #fff;
+}
+
+.file-selected {
+  background: #3b5ac0;
   color: #fff;
 }
 </style>

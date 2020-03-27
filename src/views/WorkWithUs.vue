@@ -14,10 +14,6 @@
           />
         </div>
       </template>
-      <template v-slot:slot-file-input>
-        <label class="label-file" for="select-file">Anexar currículo</label>
-        <input id="select-file" type="file" />
-      </template>
     </Form>
     <div class="button">
       <button class="btn btn-send">

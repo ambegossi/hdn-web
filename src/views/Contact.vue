@@ -14,24 +14,6 @@
           />
         </div>
       </template>
-      <template v-slot:slot-file-input>
-        <label v-show="!fileSelected" class="label-file" for="select-file"
-          >Anexar arquivo</label
-        >
-        <label
-          v-show="fileSelected"
-          class="label-file file-selected"
-          for="select-file"
-          >Arquivo selecionado</label
-        >
-        <input
-          id="select-file"
-          name="select-file"
-          type="file"
-          ref="file"
-          @change="addFile"
-        />
-      </template>
     </Form>
     <ErrorNotification :error="error" />
     <SuccessNotification v-show="formSubmitted" />
@@ -48,6 +30,7 @@ import Form from '../components/Form.vue';
 import api from '../services/api';
 import Contact from '../models/ContactClass';
 import checkForm from '../utils/checkForm';
+import formatForm from '../utils/formatForm';
 
 export default {
   name: 'Contact',
@@ -57,7 +40,6 @@ export default {
   data() {
     return {
       contact: {},
-      fileSelected: false,
       error: '',
       formSubmitted: false,
     };
@@ -75,26 +57,9 @@ export default {
         this.sendForm();
       }
     },
-    addFile() {
-      const file = this.$refs.file.files[0];
-      this.contact.file = file;
-      this.fileSelected = true;
-    },
-    formatContact() {
-      const form = new FormData();
-
-      form.append('name', this.contact.name);
-      form.append('last_name', this.contact.last_name);
-      form.append('email', this.contact.email);
-      form.append('subject', this.contact.subject);
-      form.append('description', this.contact.description);
-      form.append('file', this.contact.file);
-
-      return form;
-    },
     sendForm() {
       api
-        .post('/contact', this.formatContact(), {
+        .post('/contact', formatForm(this.contact), {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -119,10 +84,5 @@ export default {
 .title {
   margin-bottom: 38px;
   font-size: 28px;
-}
-
-.file-selected {
-  background: #3b5ac0;
-  color: #fff;
 }
 </style>
