@@ -139,7 +139,7 @@ label {
 .last-name,
 .email,
 .subject,
-.confirm-email {
+.email-confirmation {
   display: inline-block;
   width: 45%;
 }

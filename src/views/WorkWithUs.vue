@@ -3,20 +3,22 @@
     <h1 class="title">Trabalhe Conosco</h1>
     <Form @form-inputs="work_with_us = $event">
       <template v-slot:slot-form>
-        <div class="confirm-email">
-          <label for="confirm-email">Confirmação de e-mail</label>
+        <div class="email-confirmation">
+          <label for="email-confirmation">Confirmação de e-mail</label>
           <input
-            id="confirm-email"
+            id="email-confirmation"
             class="input"
-            name="confirm-email"
-            type="text"
-            v-model="confirm_email"
+            name="email-confirmation"
+            type="email"
+            v-model="work_with_us.email_confirmation"
           />
         </div>
       </template>
     </Form>
+    <ErrorNotification :error="error" />
+    <SuccessNotification v-show="formSubmitted" />
     <div class="button">
-      <button class="btn btn-send">
+      <button class="btn btn-send" @click.prevent="validateForm">
         Enviar
       </button>
     </div>
@@ -28,6 +30,10 @@
 
 <script>
 import Form from '../components/Form.vue';
+import api from '../services/api';
+import WorkWithUs from '../models/WorkWithUsClass';
+import checkForm from '../utils/checkForm';
+import formatForm from '../utils/formatForm';
 
 export default {
   name: 'WorkWithUs',
@@ -36,14 +42,38 @@ export default {
   },
   data() {
     return {
-      work_with_us: {
-        name: '',
-        last_name: '',
-        email: '',
-        description: '',
-      },
-      confirm_email: '',
+      work_with_us: {},
+      error: '',
+      formSubmitted: false,
     };
+  },
+  methods: {
+    validateForm() {
+      this.error = '';
+      this.formSubmitted = false;
+
+      const hasError = checkForm(this.work_with_us);
+
+      if (hasError) {
+        this.error = hasError;
+      } else {
+        this.sendForm();
+      }
+    },
+    sendForm() {
+      api
+        .post('/work-with-us', formatForm(this.work_with_us), {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then(() => {
+          this.formSubmitted = true;
+        });
+    },
+  },
+  created() {
+    this.work_with_us = new WorkWithUs();
   },
 };
 </script>
