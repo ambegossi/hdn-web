@@ -90,5 +90,11 @@ input {
   border: 1px solid #707070;
   height: 40px;
   width: 100%;
+  padding: 5px;
+}
+
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
 }
 </style>

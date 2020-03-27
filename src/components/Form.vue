@@ -65,8 +65,6 @@ export default {
   watch: {
     inputs: {
       handler() {
-        console.log('olaaaaaa');
-
         this.$emit('form-inputs', this.inputs);
       },
       deep: true,
