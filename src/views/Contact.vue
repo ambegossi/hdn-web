@@ -33,8 +33,10 @@
         />
       </template>
     </Form>
+    <ErrorNotification :error="error" />
+    <SuccessNotification v-show="formSubmitted" />
     <div class="button">
-      <button class="btn btn-send" @click.prevent="sendForm">
+      <button type="submit" class="btn btn-send" @click.prevent="validateForm">
         Enviar
       </button>
     </div>
@@ -45,6 +47,7 @@
 import Form from '../components/Form.vue';
 import api from '../services/api';
 import Contact from '../models/ContactClass';
+import checkForm from '../utils/checkForm';
 
 export default {
   name: 'Contact',
@@ -55,9 +58,23 @@ export default {
     return {
       contact: {},
       fileSelected: false,
+      error: '',
+      formSubmitted: false,
     };
   },
   methods: {
+    validateForm() {
+      this.error = '';
+      this.formSubmitted = false;
+
+      const hasError = checkForm(this.contact);
+
+      if (hasError) {
+        this.error = hasError;
+      } else {
+        this.sendForm();
+      }
+    },
     addFile() {
       const file = this.$refs.file.files[0];
       this.contact.file = file;
@@ -76,11 +93,15 @@ export default {
       return form;
     },
     sendForm() {
-      api.post('/contact', this.formatContact(), {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      api
+        .post('/contact', this.formatContact(), {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then(() => {
+          this.formSubmitted = true;
+        });
     },
   },
   created() {
