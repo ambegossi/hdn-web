@@ -9,7 +9,7 @@
             id="email-confirmation"
             class="input"
             name="email-confirmation"
-            type="email"
+            type="text"
             v-model="work_with_us.email_confirmation"
           />
         </div>
