@@ -41,7 +41,9 @@ export default {
     };
   },
   methods: {
-    signIn() {},
+    signIn() {
+      this.$store.dispatch('getUser', this.login.username);
+    },
   },
   created() {
     this.login = new Login();
