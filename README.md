@@ -35,6 +35,12 @@
 </p>
 
 <p align="center">
+  <a href="https://www.codacy.com/manual/ambegossi/hdn-web?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ambegossi/hdn-web&amp;utm_campaign=Badge_Grade" target="_blank">
+    <img alt="Codacy Badge" src="https://api.codacy.com/project/badge/Grade/a4d2e0b9142248edb3ee7512b9f46d31">
+  </a>
+</p>
+
+<p align="center">
   <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-project-setup">Project Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -48,16 +54,18 @@
   </a>
 </p>
 
+<p align="center"><b>Login</b><br>E-mail: admin@admin.com <br> Senha: 123</p>
+
 ## :rocket: Technologies
 
-- [Vue.js](https://vuejs.org/)
-- [Vuex](https://vuex.vuejs.org/)
-- [Vue Router](https://router.vuejs.org/)
-- [Axios](https://github.com/axios/axios)
-- [OMDb API](http://www.omdbapi.com/)
-- [json-server](https://github.com/typicode/json-server)
-- [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
-- [Prettier][prettier]
+-  [Vue.js](https://vuejs.org/)
+-  [Vuex](https://vuex.vuejs.org/)
+-  [Vue Router](https://router.vuejs.org/)
+-  [Axios](https://github.com/axios/axios)
+-  [OMDb API](http://www.omdbapi.com/)
+-  [json-server](https://github.com/typicode/json-server)
+-  [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
+-  [Prettier][prettier]
 
 ## :information_source: Project Setup
 
