@@ -9,7 +9,7 @@
           id="email"
           name="email"
           type="email"
-          v-model="login.email"
+          v-model="login.username"
         />
         <label for="password">Senha</label>
         <input
@@ -42,7 +42,9 @@ export default {
   },
   methods: {
     signIn() {
-      this.$store.dispatch('getUser', this.login.username);
+      this.$store.dispatch('signInUser', this.login.username).then(() => {
+        this.$router.push({ name: 'User' });
+      });
     },
   },
   created() {

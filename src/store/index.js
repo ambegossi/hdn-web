@@ -20,9 +20,9 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    getUser(context, payload) {
-      api.get(`/user/${payload}`).then((response) => {
-        context.commit('UPDATE_USER', response.data[0]);
+    signInUser(context, payload) {
+      return api.get(`/user/${payload}`).then((response) => {
+        context.commit('UPDATE_USER', response.data);
         context.commit('UPDATE_LOGIN', true);
       });
     },

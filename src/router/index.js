@@ -6,6 +6,9 @@ import Projects from '../views/Projects.vue';
 import Contact from '../views/Contact.vue';
 import WorkWithUs from '../views/WorkWithUs.vue';
 import Login from '../views/Login.vue';
+import User from '../views/User.vue';
+
+import store from '../store';
 
 Vue.use(VueRouter);
 
@@ -40,12 +43,32 @@ const routes = [
     name: 'Login',
     component: Login,
   },
+  {
+    path: '/user',
+    name: 'User',
+    component: User,
+    meta: {
+      login: true,
+    },
+  },
 ];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.login)) {
+    if (store.state.login) {
+      next();
+    } else {
+      next('/login');
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
