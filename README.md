@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Vue.js logo" src=".github/logo-vue-js.png" style="width:150px;"/>
+    <img alt="Vue.js logo" src=".github/logo-vue-js.png" style="width:50px;"/>
     <br>
     Front-end Challenge
 </h1>
@@ -37,28 +37,39 @@
 <p align="center">
   <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-use">Project setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-project-setup">Project Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
-## Project setup
-```
-yarn install
-```
+## About
+<p align="center">
+  <a href="" target="_blank">
+    <img alt="Demo on Netlify" src=".github/demo-netlify.png">
+  </a>
+</p>
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## :information_source: Project Setup
 
-### Compiles and minifies for production
-```
-yarn build
-```
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v10.16][nodejs] or higher + [Yarn v1.13][yarn] or higher installed on your computer. From your command line:
 
-### Lints and fixes files
-```
-yarn lint
+```bash
+# Clone this repository
+$ git clone https://github.com/ambegossi/hdn-web
+
+# Go into the repository
+$ cd hdn-web
+
+# Install dependencies
+$ yarn install
+
+# Compiles and hot-reloads for development
+$ yarn serve
+
+# Compiles and minifies for production
+$ yarn build
+
+# Lints and fixes files
+$ yarn lint
 ```
 
 ### Customize configuration
