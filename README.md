@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Vue.js logo" src=".github/logo-vue-js.png" style="width:50px;"/>
+    <img alt="Vue.js logo" src=".github/logo-vue-js.png" height="200" />
     <br>
     Front-end Challenge
 </h1>
@@ -74,3 +74,11 @@ $ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## :memo: License
+
+This project is under the MIT license. See the [LICENSE](LICENSE.md) for more information.
+
+---
+
+Made with ♥ by Anderson Begossi :wave: [Get in touch!](https://www.linkedin.com/in/anderson-begossi-b5065a130)
