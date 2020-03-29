@@ -19,6 +19,11 @@ export default {
     Header,
     Footer,
   },
+  created() {
+    if (window.sessionStorage.token) {
+      this.$store.dispatch('signInUser', window.sessionStorage.token);
+    }
+  },
 };
 </script>
 

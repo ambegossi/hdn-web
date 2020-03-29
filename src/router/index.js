@@ -8,8 +8,6 @@ import WorkWithUs from '../views/WorkWithUs.vue';
 import Login from '../views/Login.vue';
 import User from '../views/User.vue';
 
-import store from '../store';
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -64,7 +62,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some((record) => record.meta.login)) {
-    if (store.state.login) {
+    if (window.sessionStorage.token) {
       next();
     } else {
       next('/login');

@@ -24,6 +24,7 @@ export default new Vuex.Store({
       return api.get(`/user/${payload}`).then((response) => {
         context.commit('UPDATE_USER', response.data);
         context.commit('UPDATE_LOGIN', true);
+        window.sessionStorage.token = `${response.data.email}`;
       });
     },
   },
