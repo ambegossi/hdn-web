@@ -1,5 +1,5 @@
 <template>
-  <section class="projects container">
+  <section v-if="projects" class="projects container">
     <div class="our-projects">
       <h1 class="title">Nossos Projetos</h1>
       <li v-for="project in projects" :key="project.imdbID">
@@ -10,6 +10,9 @@
     </div>
     <ProjectsList :projects="projects" />
   </section>
+  <div v-else>
+    <LoadingPage />
+  </div>
 </template>
 
 <script>
@@ -30,6 +33,7 @@ export default {
   },
   methods: {
     populateProjects() {
+      this.projects = null;
       getProjects('/?apikey=c047d840&s=spider%20man').then((response) => {
         this.projects = response.data.Search;
       });
