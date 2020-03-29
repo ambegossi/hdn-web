@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://my-json-server.typicode.com/ambegossi/hdn-api',
 });
 
 export default api;
