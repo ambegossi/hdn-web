@@ -1,5 +1,5 @@
 <template>
-  <transition>
+  <transition mode="out-in">
     <p class="error" v-if="error !== ''" v-html="error"></p>
   </transition>
 </template>

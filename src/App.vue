@@ -2,7 +2,9 @@
   <div id="app">
     <Header />
     <main id="main">
-      <router-view />
+      <transition mode="out-in">
+        <router-view />
+      </transition>
     </main>
     <Footer />
   </div>
@@ -96,5 +98,23 @@ input {
 textarea {
   font-family: Arial, Helvetica, sans-serif;
   padding: 5px;
+}
+
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter {
+  transform: translate3d(0, -20px, 0);
+}
+
+.v-leave-to {
+  transform: translate3d(0, 20px, 0);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.3s;
 }
 </style>

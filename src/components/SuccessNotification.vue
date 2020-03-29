@@ -1,5 +1,5 @@
 <template>
-  <transition>
+  <transition mode="out-in">
     <p class="success">Formulário enviado com sucesso!</p>
   </transition>
 </template>

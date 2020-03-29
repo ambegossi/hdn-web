@@ -1,18 +1,18 @@
 <template>
-  <section v-if="projects" class="projects container">
-    <div class="our-projects">
-      <h1 class="title">Nossos Projetos</h1>
-      <li v-for="project in projects" :key="project.imdbID">
-        <section :id="project.imdbID">
-          <ProjectItem :project="project" />
-        </section>
-      </li>
-    </div>
-    <ProjectsList :projects="projects" />
-  </section>
-  <div v-else>
-    <LoadingPage />
-  </div>
+  <transition mode="out-in">
+    <section v-if="projects" class="projects container">
+      <div class="our-projects">
+        <h1 class="title">Nossos Projetos</h1>
+        <li v-for="project in projects" :key="project.imdbID">
+          <section :id="project.imdbID">
+            <ProjectItem :project="project" />
+          </section>
+        </li>
+      </div>
+      <ProjectsList :projects="projects" />
+    </section>
+    <LoadingPage v-else />
+  </transition>
 </template>
 
 <script>
