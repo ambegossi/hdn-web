@@ -8,19 +8,19 @@
           class="input"
           id="email"
           name="email"
-          type="text"
-          v-model="email"
+          type="email"
+          v-model="login.email"
         />
         <label for="password">Senha</label>
         <input
           class="input"
           id="password"
           name="password"
-          type="text"
-          v-model="password"
+          type="password"
+          v-model="login.password"
         />
         <div class="button">
-          <button class="btn btn-send">Entrar</button>
+          <button class="btn btn-send" @click.prevent="signIn">Entrar</button>
         </div>
         <router-link class="forgot-password-btn" to="/login"
           >Esqueci minha senha</router-link
@@ -31,8 +31,21 @@
 </template>
 
 <script>
+import Login from '../models/LoginClass';
+
 export default {
   name: 'Login',
+  data() {
+    return {
+      login: {},
+    };
+  },
+  methods: {
+    signIn() {},
+  },
+  created() {
+    this.login = new Login();
+  },
 };
 </script>
 
@@ -71,6 +84,10 @@ label {
   color: #000000;
   font-weight: bold;
   margin-bottom: 9px;
+}
+
+.btn-send {
+  margin-bottom: 0;
 }
 
 .forgot-password-btn {

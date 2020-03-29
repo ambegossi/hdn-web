@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Vue.js logo" src=".github/logo-vue-js.png" style="width:250px;"/>
+    <img alt="Vue.js logo" src=".github/logo-vue-js.png" style="width:150px;"/>
     <br>
     Front-end Challenge
 </h1>
