@@ -48,6 +48,17 @@
   </a>
 </p>
 
+## :rocket: Technologies
+
+- [Vue.js](https://vuejs.org/)
+- [Vuex](https://vuex.vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [Axios](https://github.com/axios/axios)
+- [OMDb API](http://www.omdbapi.com/)
+- [json-server](https://github.com/typicode/json-server)
+- [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
+- [Prettier][prettier]
+
 ## :information_source: Project Setup
 
 To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v10.16][nodejs] or higher + [Yarn v1.13][yarn] or higher installed on your computer. From your command line:
@@ -82,3 +93,10 @@ This project is under the MIT license. See the [LICENSE](LICENSE.md) for more in
 ---
 
 Made with ♥ by Anderson Begossi :wave: [Get in touch!](https://www.linkedin.com/in/anderson-begossi-b5065a130)
+
+[nodejs]: https://nodejs.org/
+[yarn]: https://yarnpkg.com/
+[vc]: https://code.visualstudio.com/
+[vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[prettier]: https://prettier.io/
