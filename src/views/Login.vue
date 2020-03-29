@@ -19,6 +19,7 @@
           type="password"
           v-model="login.password"
         />
+        <ErrorNotification :error="error" />
         <div class="button">
           <button class="btn btn-send" @click.prevent="signIn">Entrar</button>
         </div>
@@ -38,13 +39,28 @@ export default {
   data() {
     return {
       login: {},
+      error: '',
     };
   },
   methods: {
+    checkLogin() {
+      if (this.login.username === '' || this.login.password === '') {
+        this.error = '* Preencha todos os campos';
+        return false;
+      }
+      return true;
+    },
     signIn() {
-      this.$store.dispatch('signInUser', this.login.username).then(() => {
-        this.$router.push({ name: 'User' });
-      });
+      if (this.checkLogin()) {
+        this.$store
+          .dispatch('signInUser', this.login.username)
+          .then(() => {
+            this.$router.push({ name: 'User' });
+          })
+          .catch(() => {
+            this.error = '* Login inválido';
+          });
+      }
     },
   },
   created() {
@@ -63,7 +79,6 @@ export default {
 .login-form {
   border: 1px solid #707070;
   width: 580px;
-  height: 453px;
 
   padding: 43px 50px 66px 50px;
 }
