@@ -7,9 +7,11 @@
             <img src="../assets/hdn-logo.png" alt="HDN Digital" />
           </router-link>
         </li>
-        <template v-if="this.$route.name === 'Login'">
+        <template
+          v-if="this.$route.name === 'Login' || this.$route.name === 'User'"
+        >
           <li id="li-login">
-            <router-link to="/login">Gestão de Projetos</router-link>
+            <router-link to="/user">Gestão de Projetos</router-link>
           </li>
         </template>
         <template v-else>
