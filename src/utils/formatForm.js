@@ -1,3 +1,13 @@
+/**
+ * Formats the form to a FormatData.
+ *
+ * @param {Object} obj - The form to be formatted.
+ * @return {FormData} - The form in FormData format.
+ *
+ * @example
+ *
+ *     formatForm(form)
+ */
 export default function formatForm(obj) {
   const form = new FormData();
 
