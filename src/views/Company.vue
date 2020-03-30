@@ -1,5 +1,5 @@
 <template>
-  <section class="company container" key="company">
+  <section class="company container">
     <div class="the-company">
       <h1>A empresa</h1>
       <div class="content">

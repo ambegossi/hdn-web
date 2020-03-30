@@ -19,6 +19,7 @@
 
 <script>
 import getProjects from '../services/apiOmdb';
+import authOmdb from '../config/authOmdb';
 
 export default {
   name: 'ProjectItem',
@@ -31,9 +32,11 @@ export default {
   methods: {
     getDetailedProject() {
       const title = this.project.Title.replace(/\s/g, '+');
-      getProjects(`?apikey=c047d840&t=${title}&plot=short`).then((response) => {
-        this.detailed_project = response.data;
-      });
+      getProjects(`?apikey=${authOmdb.key}&t=${title}&plot=short`).then(
+        (response) => {
+          this.detailed_project = response.data;
+        }
+      );
     },
   },
   created() {

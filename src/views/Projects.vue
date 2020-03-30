@@ -19,6 +19,7 @@
 import ProjectItem from '../components/ProjectItem.vue';
 import ProjectsList from '../components/ProjectsList.vue';
 import getProjects from '../services/apiOmdb';
+import authOmdb from '../config/authOmdb';
 
 export default {
   name: 'Projects',
@@ -34,9 +35,11 @@ export default {
   methods: {
     populateProjects() {
       this.projects = null;
-      getProjects('/?apikey=c047d840&s=spider%20man').then((response) => {
-        this.projects = response.data.Search;
-      });
+      getProjects(`/?apikey=${authOmdb.key}&s=spider%20man`).then(
+        (response) => {
+          this.projects = response.data.Search;
+        }
+      );
     },
   },
   created() {
