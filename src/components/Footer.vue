@@ -21,7 +21,7 @@ footer {
   font-weight: bold;
   color: #fff;
   position: relative;
-  top: 75px;
+  top: 150px;
   border: 1px solid #707070;
   display: flex;
 }
